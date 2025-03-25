@@ -47,10 +47,9 @@ def main():
         j1 = random.choice(["piedra", "papel", "tijera"])
         j2 = random.choice(["piedra", "papel", "tijera"])
         
-        # print(nombre1+" ha sacado "+j1+".")
-        # print(nombre2+" ha sacado "+j2+".")
-        # Implemente los comentarios anteriores empleando print("".format())
-       
+        print("El {0} ha sacado {1}.".format(nombre1,j1))
+        print("El {0} ha sacado {1}.".format(nombre2,j2))
+        # Implemente los comentarios anteriores empleando print("".format()) 
         
         ganador=quienGana(j1,j2)
         

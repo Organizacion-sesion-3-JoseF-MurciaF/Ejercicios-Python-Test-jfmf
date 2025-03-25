@@ -23,12 +23,22 @@ def quienGana(jugada1, jugada2) :
         return 0
     elif jugada1 == "piedra" and jugada2 == "tijera" :
         return 1
-    # --> Complete su código <--
-    else :
+    elif jugada1 == "piedra" and jugada2 == "papel" :
         return 2
+    elif jugada1 == "papel" and jugada2 == "piedra" :
+        return 1
+    elif jugada1 == "papel" and jugada2 == "tijera" :
+        return 2
+    elif jugada1 == "tijera" and jugada2 == "piedra" :
+        return 2
+    elif jugada1 == "tijera" and jugada2 == "papel" :
+        return 1         
+    else :
+        return print("Error")
 
 # Programa principal
 def main():
+
     print("PIEDRA, PAPEL, ... ¡TIJERA!")
 
     nombre1=input("Introduzca el nombre del Jugador 1: ")
@@ -39,9 +49,9 @@ def main():
     ganadas2=0
 
     while numeroTirada > 0 :
-        print("Tirada nº "+numeroTirada+":")
+        print("Numero de tirada "+str(numeroTirada))
         j1 = random.choice(["piedra", "papel", "tijera"])
-        j2 = "piedera" # Implemente tirada aleatoria para el jugador 2.
+        j2 = random.choice(["piedra", "papel", "tijera"])
         
         print(nombre1+" ha sacado "+j1+".")
         print(nombre2+" ha sacado "+j2+".")
@@ -61,13 +71,15 @@ def main():
         
         numeroTirada=numeroTirada-1
 
+
     # Resultado final de todas las tiradas
     if ganadas1 == ganadas2 :
         print("HAN EMPATADO")
-   # --> Complete código <--
+    elif ganadas1 >= ganadas2 :
+        print("GANA "+nombre1+" partidas ganadas "+ str(ganadas1))
     else :
-        print("GANA "+nombre2)
-
+        print("GANA "+nombre2+" partidas ganadas "+ str(ganadas2))
 
 if __name__== "__main__" :
    main()
+

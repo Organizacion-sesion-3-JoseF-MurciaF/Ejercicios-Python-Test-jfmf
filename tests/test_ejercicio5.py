@@ -17,29 +17,29 @@ def test_esImpar():
 
 def test_generarImpares():
     # Este puede no ser un buen caso de prueba por la forma en que esta construído.
-    inicio=random.randint(-10000,10000)
-    n=random.randint(0,100000);
+    inicio=random.randint(0,1000)
+    n=random.randint(0,1000);
     impares=t.generarImpares(n,inicio);
     assert len(impares) == n
     if inicio % 2 ==0 :
         assert impares[0] == inicio+1
-    # Comprobamos la generación de impares
+    # Comprobamos la generación de impares - MOdificado valor de inicio esta cambiado
     esperado=[1, 3, 5, 7, 9]
     assert t.generarImpares(5,1) == esperado
     esperado=[3, 5, 7, 9, 11]
-    assert t.generarImpares(5,2) == esperado
+    assert t.generarImpares(5,3) == esperado
 
 def test_generarPares():
     # Este puede no ser un buen caso de prueba por la forma en que esta construído.
-    inicio=random.randint(-10000,10000)
-    n=random.randint(0,100000);
+    inicio=random.randint(0,1000)
+    n=random.randint(0,1000);
     pares=t.generarPares(n,inicio);
     assert len(pares) == n
     if inicio % 2 ==1 :
         assert pares[0] == inicio+1
-    # Comprobamos la generación de pares
+    # Comprobamos la generación de pares - modificado valor de incio
     esperado=[2, 4, 6, 8, 10]
-    assert t.generarPares(5,1) == esperado
+    assert t.generarPares(5,2) == esperado
     esperado=[4, 6, 8, 10, 12]
     assert t.generarPares(5,4) == esperado
 

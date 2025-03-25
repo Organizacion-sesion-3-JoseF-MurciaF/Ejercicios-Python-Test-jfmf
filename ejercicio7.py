@@ -16,12 +16,11 @@ def fibonacci(n) :
         # Implementa las series de Fibonacci
         # vector[0]=1
         # vector[1]=1
-
-        vector.append(1)
-        vector.append(1)
-
-        # --> Implemente el código del Bucle <--
-        
+        # --> Implementado el código del Bucle <--
+        a, b = 0, 1
+        for i in range(n):
+            a, b = b, a+b
+            vector.append(a)
     elif n==1 :
         vector[0]=1
 
